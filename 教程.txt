@@ -1,0 +1,25 @@
+﻿具体使用方法
+
+服务器端配置
+    1.E盘下创建cvstest目录
+    2.控制面板 - CVS for NT - Repositories - Add
+	E:/cvstest
+    3.打开cmd,输入(administrator换成操作系统的管理员账户)
+	set cvsroot=:pserver:administrator@127.0.0.1/cvstest
+    4.创建新用户,输入密码
+	cvs passwd -a -r administrator niu
+      CVSROOT/passwd文件中的记录变为niu:***:administrator
+    5.防火墙端口2401,2402
+
+客户端配置
+    1.导入cvs仓库
+	cvs import -m "this is a cvstest project" cvstest tengtu start
+      "this is a cvstest project":第一版注释
+      cvstest:模块名,根目录名
+      tengtu:第一个Branch
+      start:第一个Tag
+    2.其他一般操作都可以通过wincvs操作
+    3.添加删除文件/文件夹（无法删除文件夹）
+	cvs add/rm 文件/文件夹
+
+
